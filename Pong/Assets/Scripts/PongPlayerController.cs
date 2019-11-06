@@ -21,16 +21,16 @@ public class PongPlayerController : MonoBehaviour
             if (!GameManager.GameStarted) return;
 
             if (transform.position.y < BallController.ballRef.transform.position.y)
-                transform.position += Vector3.up * MovementSpeed;
+                transform.position += Vector3.up * MovementSpeed * Time.deltaTime;
             if (transform.position.y > BallController.ballRef.transform.position.y)
-                transform.position += Vector3.down * MovementSpeed;
+                transform.position += Vector3.down * MovementSpeed * Time.deltaTime;
         }
         else
         {
             if (Input.GetKey(UpKey) && transform.position.y < MaxYPosition)
-                transform.position += Vector3.up * MovementSpeed;
+                transform.position += Vector3.up * MovementSpeed * Time.deltaTime;
             if (Input.GetKey(DownKey) && transform.position.y > MinYPosition)
-                transform.position += Vector3.down * MovementSpeed;
+                transform.position += Vector3.down * MovementSpeed * Time.deltaTime;
         }
     }
 }
